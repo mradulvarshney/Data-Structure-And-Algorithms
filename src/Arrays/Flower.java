@@ -1,3 +1,5 @@
+package Arrays;
+
 /*
 Write a Java class, Flower, that has three instance variables of
 type String, int, and float, which respectively represent the name of the flower,

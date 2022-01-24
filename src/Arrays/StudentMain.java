@@ -1,3 +1,5 @@
+package Arrays;
+
 /*
 Create an array of 10 students and print the record of those students who got the highest marks and who got minimum marks. The structure of student class is as follows 
 class Student

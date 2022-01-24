@@ -1,3 +1,5 @@
+package Arrays;
+
 /*Me Bean is very good in mathematics. He was given a number n and was told to find out number of trailing zeroes in n! (Factorial) . Can you help him?
 
 Sample Input

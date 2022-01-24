@@ -1,3 +1,5 @@
+package Arrays;
+
 /*
 Consider an array MARKS[4][5] which stores the marks obtained by 4 students in 5 subjects. Now write a program to 
 (a) find the average marks obtained in each subject. 

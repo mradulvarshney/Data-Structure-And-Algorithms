@@ -1,3 +1,5 @@
+package Arrays;
+
 /*
 Write a short Java function that takes an array of int values  
 as an argument and determines 

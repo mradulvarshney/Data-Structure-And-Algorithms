@@ -1,3 +1,5 @@
+package Arrays;
+
 /*
 Write a program to input the elements of a two- dimensional array. 
 Then from this array, make two arrays one that stores all 

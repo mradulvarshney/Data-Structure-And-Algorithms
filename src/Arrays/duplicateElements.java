@@ -1,3 +1,5 @@
+package Arrays;
+
 /*Write a program to remove consecutive duplicate elements in an array.
 
 Input values
