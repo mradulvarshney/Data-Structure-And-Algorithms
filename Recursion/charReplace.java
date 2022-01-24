@@ -3,13 +3,13 @@ package Recursion;
 /*
 Given an input string S and two characters char1 and char2, 
 you need to replace every occurrence of character c1 with character c2 
-in the given string. Do this recursively.
+in the given string. Do this recursively. mradul
 
 Sample Input :
 abaca
 a x
 Sample Output :
-xbxcd
+xbxcdgit
 */
 
 import java.util.*;
