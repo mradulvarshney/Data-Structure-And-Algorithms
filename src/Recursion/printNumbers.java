@@ -13,15 +13,12 @@ import java.util.Scanner;
 
 public class printNumbers
 {
-    int N=1;
     public void print(int n)
     {
-        if(N<=n)
-        {
-            System.out.print(N +" ");
-            N++;
-            print(n);
-        }
+        if (n==0)
+            return;
+        print(n-1);
+        System.out.print(n+" ");
     }
     public static void main(String[] args)
     {
