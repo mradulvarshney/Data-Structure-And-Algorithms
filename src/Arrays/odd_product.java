@@ -7,7 +7,7 @@ if there is a pair of numbers in the array whose product is odd.
  */
 import java.util.Scanner;
 
-public class odd_prduct
+public class odd_product
 {
     public static void main(String[] args)
     {
