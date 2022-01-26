@@ -14,39 +14,82 @@ public static int[] res(int arr[], int current index, int search_value)
 
 import java.util.Scanner;
 
+//
+//public class all_occurrence_search
+//{
+//    static Scanner sc = new Scanner(System.in);
+//    static {System.out.println("Enter size of array: ");}
+//    static int n =sc.nextInt(), c=0, a=0;
+//    static int[] searchArr = new int[n];
+//    public static int[] search(int[] arr, int n, int index)
+//    {
+//        if(index==arr.length)
+//            return searchArr;
+//        if (n==arr[index])
+//        {
+//            searchArr[a]=index;
+//            a++;
+//            c++;
+//        }
+//        return search(arr,n,index+1);
+//    }
+//
+//    public static void main(String[] args)
+//    {
+//        int[] arr = new int[n];
+//        for(int i=0;i<arr.length;i++)
+//        {
+//            arr[i]=sc.nextInt();
+//        }
+//        System.out.println("Enter element to search:");
+//        int n= sc.nextInt();
+//        searchArr = search(arr,n,0);
+//        if(c==0)
+//            System.out.println("No element found");
+//        else
+//            for (int i=0;i<c;i++)
+//                System.out.print(searchArr[i]+" ");
+//    }
+//}
+
+
+
+//********   Another method     ********//
+
 public class all_occurrence_search
 {
-    static Scanner sc = new Scanner(System.in);
-    static {System.out.println("Enter size of array: ");}
-    static int n =sc.nextInt(), c=0, a=0;
-    static int[] searchArr = new int[n];
-    public static int[] search(int[] arr, int n, int index)
+    public static int[] search(int[] arr, int data, int index, int count)
     {
         if(index==arr.length)
-            return searchArr;
-        if (n==arr[index])
         {
-            searchArr[a]=index;
-            a++;
-            c++;
+            int[] r = new int[count];
+            return r;
         }
-        return search(arr,n,index+1);
+        int[] ind = null;
+        if(arr[index]==data)
+            ind=search(arr,data,index+1,count+1);
+        else
+            ind=search(arr,data,index+1,count);
+        if(arr[index]==data)
+            ind[count]=index;
+        return ind;
     }
 
     public static void main(String[] args)
     {
-        int[] arr = new int[n];
-        for(int i=0;i<arr.length;i++)
-        {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size of array:");
+        int[] arr = new int[sc.nextInt()];
+        for(int i=0;i< arr.length;i++)
             arr[i]=sc.nextInt();
-        }
-        System.out.println("Enter element to search:");
-        int n= sc.nextInt();
-        searchArr = search(arr,n,0);
-        if(c==0)
-            System.out.println("No element found");
+        System.out.println("Enter the element to search:");
+        int n = sc.nextInt();
+        int[] res = search(arr, n, 0, 0);
+        if(res.length==0)
+            System.out.println("No element found.");
         else
-            for (int i=0;i<c;i++)
-                System.out.print(searchArr[i]+" ");
+            for(int i=0;i<res.length;i++)
+                System.out.print(res[i]+" ");
+
     }
 }
