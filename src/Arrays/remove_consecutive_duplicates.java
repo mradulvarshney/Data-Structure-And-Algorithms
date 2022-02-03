@@ -13,7 +13,7 @@ Output
 
 import java.util.Scanner;
 
-public class duplicateElements
+class remove_consecutive_duplicates
 {
     public static void main(String[] args)
     {
