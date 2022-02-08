@@ -33,7 +33,7 @@ public class Linked_List
         }
     }
 
-    public int length()
+    public int size()
     {
         int length=0;
         Node tmp=head;
@@ -44,4 +44,20 @@ public class Linked_List
         }
         return length;
     }
+
+    public int get(int index)
+    {
+        if(index<0 || index>size())
+            throw new IndexOutOfBoundsException();
+        else
+        {
+            Node tmp=head;
+            for (int i=0; i<index; i++)
+            {
+                tmp=tmp.next;
+            }
+            return tmp.data;
+        }
+    }
+
 }
