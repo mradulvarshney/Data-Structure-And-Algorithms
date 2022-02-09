@@ -55,6 +55,7 @@ public class getElementAtIndex
         {
             Linked_List list = new Linked_List();
             System.out.println("Enter elements in LL");
+            System.out.println("To exit from LL input -1 at the end.");
             while (true)
             {
                 int n = sc.nextInt();

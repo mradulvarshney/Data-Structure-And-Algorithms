@@ -24,7 +24,8 @@ public class Remove_Duplicates
     {
         Scanner sc = new Scanner(System.in);
         Linked_List list = new Linked_List();
-        System.out.println("After adding last element input -1");
+        System.out.println("Enter elements in LL");
+        System.out.println("To exit from LL input -1 at the end.");
         while(true)
         {
             int n = sc.nextInt();

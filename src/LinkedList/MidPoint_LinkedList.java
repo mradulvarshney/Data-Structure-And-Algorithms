@@ -49,6 +49,7 @@ public class MidPoint_LinkedList
         int testcases = sc.nextInt();
         while (testcases--!=0)
         {
+            System.out.println("Enter elements in LL");
             System.out.println("To exit from LL input -1 at the end.");
             Linked_List list = new Linked_List();
             while (true)
