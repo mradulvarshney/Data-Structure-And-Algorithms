@@ -43,14 +43,6 @@ import java.util.Scanner;
 
 public class Print_Reverse_LL
 {
-    public static void printReverse(Linked_List list, int index) throws Exception
-    {
-        if (index<0)
-            return;
-        System.out.print(list.getAt(index)+ " ");
-        printReverse(list,index-1);
-    }
-
     public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
@@ -68,8 +60,8 @@ public class Print_Reverse_LL
                     break;
                 list.addLast(n);
             }
-            printReverse(list, list.size()-1);
-            System.out.println();
+            list.reverseData();
+            list.display();
         }
     }
 }

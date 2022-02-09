@@ -13,7 +13,7 @@ public class Linked_List
 
     public void display()
     {
-        Node temp = head;
+        Node temp = this.head;
         while (temp!=null) {
             System.out.print(temp.data + ", ");
             temp = temp.next;
@@ -99,7 +99,7 @@ public class Linked_List
             throw new Exception("LL is empty");
         if(index<0 || index>this.size-1)
             throw new IndexOutOfBoundsException("Invalid Index");
-        Node tmp=head;
+        Node tmp = this.head;
         for (int i=0; i<index; i++)
         {
             tmp=tmp.next;
@@ -159,6 +159,46 @@ public class Linked_List
             Node n = getNodeAt(index);
             nm1.next=n.next;
             this.size--;
+        }
+    }
+
+    public void sort() throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty.");
+        Node temp = this.head;
+        while(temp!=null)
+        {
+            Node temp1 = temp.next;
+            while(temp1!=null)
+            {
+                if(temp.data>temp1.data)
+                {
+                    int n = temp.data;
+                    temp.data = temp1.data;
+                    temp1.data=n;
+                }
+                temp1=temp1.next;
+            }
+            temp=temp.next;
+        }
+    }
+
+    public void reverseData() throws Exception
+    {
+        int left = 0;
+        int right = this.size-1;
+        while (left<right)
+        {
+            Node ln = getNodeAt(left);
+            Node rn = getNodeAt(right);
+
+            int tmp = ln.data;
+            ln.data = rn.data;
+            rn.data = tmp;
+
+            left++;
+            right--;
         }
     }
 }
