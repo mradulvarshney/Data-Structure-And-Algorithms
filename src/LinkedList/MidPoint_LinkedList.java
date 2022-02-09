@@ -59,12 +59,10 @@ public class MidPoint_LinkedList
                     break;
                 list.addLast(n);
             }
-            if (list.size()==0)
+            if(list.size()==0)
                 continue;
-            if(list.size()%2==0)
-                System.out.println(list.getAt((list.size()/2)-1));
             else
-                System.out.println(list.getAt(list.size()/2));
+                System.out.println(list.mid());
         }
     }
 }
