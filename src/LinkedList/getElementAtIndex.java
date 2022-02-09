@@ -46,7 +46,7 @@ import java.util.Scanner;
 
 public class getElementAtIndex
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of testcases:");
@@ -64,7 +64,7 @@ public class getElementAtIndex
             }
             System.out.println("Enter the index:");
             int index = sc.nextInt();
-            System.out.println("Data at index "+ index+ " is "+ list.get(index));
+            System.out.println("Data at index "+ index+ " is "+ list.getAt(index));
         }
     }
 }

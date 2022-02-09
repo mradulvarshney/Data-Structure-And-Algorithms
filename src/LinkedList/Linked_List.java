@@ -11,15 +11,29 @@ public class Linked_List
     private Node tail;
     private int size;
 
+    public void display()
+    {
+        Node temp = head;
+        while (temp!=null) {
+            System.out.print(temp.data + ", ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
     public void addLast(int data)
     {
+        //create new node
         Node nn = new Node();
         nn.data = data;
         nn.next = null;
+
+        //attach
         if(this.size>0)
         {
             this.tail.next = nn;
         }
+
+        //update summary object
         if(this.size==0)
         {
             this.head = nn;
@@ -33,31 +47,118 @@ public class Linked_List
         }
     }
 
-    public int size()
+    public void addFirst(int data)
     {
-        int length=0;
-        Node tmp=head;
-        while(tmp!=null)
-        {
-            length++;
-            tmp=tmp.next;
-        }
-        return length;
-    }
+        //create a new node
+        Node nn = new Node();
+        nn.data=data;
+        nn.next=null;
 
-    public int get(int index)
-    {
-        if(index<0 || index>size())
-            throw new IndexOutOfBoundsException();
+        //attach
+        if(this.size>0)
+        {
+            nn.next=head;
+        }
+
+        //update summary object
+        if(this.size==0)
+        {
+            this.head=nn;
+            this.tail=nn;
+            this.size++;
+        }
         else
         {
-            Node tmp=head;
-            for (int i=0; i<index; i++)
-            {
-                tmp=tmp.next;
-            }
-            return tmp.data;
+            this.head=nn;
+            this.size++;
         }
     }
 
+    public int size()
+    {
+        return this.size;
+    }
+
+    public int getAt(int index) throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty");
+        if(index<0 || index>this.size-1)
+            throw new IndexOutOfBoundsException("Invalid Index");
+        Node tmp=head;
+        for (int i=0; i<index; i++)
+        {
+            tmp=tmp.next;
+        }
+        return tmp.data;
+    }
+
+    private Node getNodeAt(int index) throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty");
+        if(index<0 || index>this.size-1)
+            throw new IndexOutOfBoundsException("Invalid Index");
+        Node tmp=head;
+        for (int i=0; i<index; i++)
+        {
+            tmp=tmp.next;
+        }
+        return tmp;
+    }
+
+    public void removeFirst() throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty");
+        if(this.size==1)
+        {
+            this.head=null;
+            this.tail=null;
+            this.size--;
+        }
+        else
+        {
+            this.head = this.head.next;
+            this.size--;
+        }
+    }
+
+    public void removeLast() throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty");
+        if(this.size==1)
+        {
+            this.head=null;
+            this.tail=null;
+            this.size--;
+        }
+        else
+        {
+            Node sm2 = getNodeAt(this.size-2);
+            this.tail=sm2;
+            this.tail.next=null;
+            this.size--;
+        }
+    }
+
+    public void removeAt(int index) throws Exception
+    {
+        if(this.size==0)
+            throw new Exception("LL is empty");
+        if(index<0 || index>this.size-1)
+            throw new IndexOutOfBoundsException("Invalid Index");
+        if(index==0)
+            removeFirst();
+        else if(index==this.size-1)
+            removeLast();
+        else
+        {
+            Node nm1 = getNodeAt(index-1);
+            Node n = getNodeAt(index);
+            nm1.next=n.next;
+            this.size--;
+        }
+    }
 }
