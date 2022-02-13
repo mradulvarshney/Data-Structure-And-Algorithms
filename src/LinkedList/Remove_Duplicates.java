@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Remove_Duplicates
 {
-    public static Linked_List removeDuplicates(Linked_List list, int index) throws Exception
+    public static Singly_Linked_List removeDuplicates(Singly_Linked_List list, int index) throws Exception
     {
         if(index== list.size()-1)
             return list;
@@ -23,7 +23,7 @@ public class Remove_Duplicates
     public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
-        Linked_List list = new Linked_List();
+        Singly_Linked_List list = new Singly_Linked_List();
         System.out.println("Enter elements in LL");
         System.out.println("To exit from LL input -1 at the end.");
         while(true)

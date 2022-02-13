@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class Linked_List
+public class Singly_Linked_List
 {
     private static class Node
     {
@@ -70,6 +70,28 @@ public class Linked_List
         else
         {
             this.head=nn;
+            this.size++;
+        }
+    }
+
+    public void addAt(int data, int index) throws Exception
+    {
+        if(index<0 || index>this.size)
+          throw new IndexOutOfBoundsException("Invalid Index");
+
+        if(index==0)
+            addFirst(data);
+        else if(index==this.size)
+            addLast(data);
+        else
+        {
+            Node nm1 = getNodeAt(index-1);
+            Node n = new Node();
+            n.data = data;
+            n.next = null;
+            Node np1 = getNodeAt(index);
+            nm1.next = n;
+            n.next = np1;
             this.size++;
         }
     }
