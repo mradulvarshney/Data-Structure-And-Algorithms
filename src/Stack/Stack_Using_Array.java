@@ -1,11 +1,11 @@
 package Stack;
 
-public class Stack
+public class Stack_Using_Array
 {
     private int[] arr;
     private int tos;
 
-    Stack(int size)
+    Stack_Using_Array(int size)
     {
         arr = new int[size];
         tos = -1;
