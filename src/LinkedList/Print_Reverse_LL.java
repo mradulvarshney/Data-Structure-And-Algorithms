@@ -8,15 +8,15 @@ To explain it further, you need to start printing the data from the tail and mov
 Note :
 You can’t change any of the pointers in the linked list, just print it in the reverse order.
  Input format :
-The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+The first line contains an Integer 't' which denotes the number of ClassTestQuestions.test cases or queries to be run. Then the ClassTestQuestions.test cases follow.
 
-The first and the only line of each test case or query contains the elements of the singly linked list separated by a single space.
+The first and the only line of each ClassTestQuestions.test case or query contains the elements of the singly linked list separated by a single space.
 Remember/Constraints :
 While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
 Output format :
-For each test case, print the singly linked list of integers in a reverse fashion, in a row, separated by a single space.
+For each ClassTestQuestions.test case, print the singly linked list of integers in a reverse fashion, in a row, separated by a single space.
 
-Output for every test case will be printed in a seperate line.
+Output for every ClassTestQuestions.test case will be printed in a seperate line.
  Constraints :
 1 <= t <= 10^2
 0 <= M <= 10^3
@@ -46,7 +46,7 @@ public class Print_Reverse_LL
     public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter no of test cases you want to execute:");
+        System.out.println("Enter no of ClassTestQuestions.test cases you want to execute:");
         int testcases = sc.nextInt();
         while (testcases--!=0)
         {

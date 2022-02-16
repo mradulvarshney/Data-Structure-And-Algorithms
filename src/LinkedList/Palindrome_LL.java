@@ -5,13 +5,13 @@ Palindrome LinkedList
 
 You have been given a head to a singly linked list of integers. Write a function check to whether the list given is a 'Palindrome' or not.
  Input format :
-The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+The first line contains an Integer 't' which denotes the number of ClassTestQuestions.test cases or queries to be run. Then the ClassTestQuestions.test cases follow.
 
-First and the only line of each test case or query contains the the elements of the singly linked list separated by a single space.
+First and the only line of each ClassTestQuestions.test case or query contains the the elements of the singly linked list separated by a single space.
  Remember/Consider :
 While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
  Output format :
-For each test case, the only line of output that print 'true' if the list is Palindrome or 'false' otherwise.
+For each ClassTestQuestions.test case, the only line of output that print 'true' if the list is Palindrome or 'false' otherwise.
  Constraints :
 1 <= t <= 10^2
 0 <= M <= 10^5
@@ -44,7 +44,7 @@ public class Palindrome_LL
     public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter no of test cases you want to execute:");
+        System.out.println("Enter no of ClassTestQuestions.test cases you want to execute:");
         int testcases = sc.nextInt();
         while (testcases--!=0) {
             System.out.println("Enter elements in LL");

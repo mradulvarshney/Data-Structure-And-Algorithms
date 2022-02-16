@@ -54,13 +54,11 @@ public class Circular_Queue_Using_Array
 
     public int getFront()
     {
-        System.out.println(front);
         return queue[front%queue.length];
     }
 
     public int getRear()
     {
-        System.out.println(rear);
         return queue[(rear%queue.length)-1];
     }
 
