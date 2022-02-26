@@ -8,12 +8,12 @@ public class Stack_Using_Array
     Stack_Using_Array(int size)
     {
         arr = new int[size];
-        tos = -1;
+        tos = 0;
     }
 
     public int size()
     {
-        return tos + 1;
+        return tos;
     }
 
     public boolean isFull()
@@ -31,7 +31,7 @@ public class Stack_Using_Array
         if(isFull())
             System.out.println("Stack is Full");
         else
-            arr[++tos]=data;
+            arr[tos++]=data;
     }
 
     public int pop() throws Exception
@@ -39,8 +39,8 @@ public class Stack_Using_Array
         if(isEmpty())
             throw new Exception("Stack is Empty");
 
-        int temp = arr[tos];
-        arr[tos] = 0;
+        int temp = arr[tos-1];
+        arr[tos-1] = 0;
         tos--;
         return temp;
     }
@@ -56,7 +56,7 @@ public class Stack_Using_Array
 
      public void display()
      {
-         for (int i=tos; i>=0; i--)
+         for (int i=tos-1; i>=0; i--)
          {
              System.out.print(arr[i]+ " ");
          }
