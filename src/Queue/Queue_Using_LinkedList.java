@@ -55,7 +55,8 @@ public class Queue_Using_LinkedList
     public void deQueue() throws Exception
     {
         if(this.size==0)
-            throw new Exception("LL is empty");
+            throw new Exception("Queue is empty");
+
         if(this.size==1)
         {
             this.head=null;
@@ -69,13 +70,17 @@ public class Queue_Using_LinkedList
         }
     }
 
-    public int getFront()
+    public int getFront() throws Exception
     {
+        if(this.size==0)
+            throw new Exception("Queue is empty");
         return head.data;
     }
 
-    public int getRear()
+    public int getRear() throws Exception
     {
+        if(this.size==0)
+            throw new Exception("Queue is empty");
         return tail.data;
     }
 }
