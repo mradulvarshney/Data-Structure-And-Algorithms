@@ -51,15 +51,17 @@ public class Circular_Queue_Using_Array
         return temp;
     }
 
-    public int getFront()
+    public int getFront() throws Exception
     {
+        if (isEmpty())
+            throw new Exception("Queue is Empty");
         return queue[front%queue.length];
     }
 
-    public int getRear()
+    public int getRear() throws Exception
     {
-        if(rear==0)
-            return 0;
+        if (isEmpty())
+            throw new Exception("Queue is Empty");
         return queue[rear%queue.length-1];
     }
 
