@@ -12,7 +12,7 @@ public class Circular_Queue_Using_Array
         queue = new int[size];
         front=0;
         rear=0;
-        this.size=0;
+        size=0;
     }
 
     public int size()
@@ -22,7 +22,7 @@ public class Circular_Queue_Using_Array
 
     public boolean isFull()
     {
-        return size() == queue.length;
+        return size == queue.length;
     }
 
     public boolean isEmpty()
@@ -35,8 +35,7 @@ public class Circular_Queue_Using_Array
         if (isFull())
             throw new Exception("Queue is Full");
 
-        queue[(rear)%queue.length]=data;
-        rear++;
+        queue[(rear++)%queue.length]=data;
         size++;
     }
 
@@ -59,14 +58,16 @@ public class Circular_Queue_Using_Array
 
     public int getRear()
     {
-        return queue[(rear%queue.length)-1];
+        if(rear==0)
+            return 0;
+        return queue[rear%queue.length-1];
     }
 
     public void display()
     {
-        for (int i=front; i<rear; i++)
+        for (int i=front; i<=rear; i++)
         {
-            System.out.print(queue[(i)%queue.length]+ " ");
+            System.out.print(queue[i%queue.length]+ " ");
         }
         System.out.println();
     }
