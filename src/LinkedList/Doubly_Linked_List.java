@@ -155,6 +155,7 @@ public class Doubly_Linked_List
         else
         {
             head=head.next;
+            head.prev=null;
             size--;
         }
     }
@@ -177,7 +178,7 @@ public class Doubly_Linked_List
         }
     }
 
-    public void remoevAt(int index) throws Exception
+    public void removeAt(int index) throws Exception
     {
         if (size==0)
             System.out.println("LL is empty");
