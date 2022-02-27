@@ -67,7 +67,7 @@ public class Circular_Queue_Using_Array
 
     public void display()
     {
-        for (int i=front; i<=rear; i++)
+        for (int i=front; i<rear; i++)
         {
             System.out.print(queue[i%queue.length]+ " ");
         }
