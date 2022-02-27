@@ -46,11 +46,6 @@ public class Linear_Queue_Using_Array
         queue[front]=0;
         front = front+1;
         size--;
-        if(front==queue.length)
-        {
-            front=0;
-            size=0;
-        }
         return temp;
     }
 
