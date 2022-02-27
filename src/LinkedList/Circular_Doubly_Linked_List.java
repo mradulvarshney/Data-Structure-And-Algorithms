@@ -15,23 +15,23 @@ public class Circular_Doubly_Linked_List
     public void display_from_beginning()
     {
         Node temp=head;
-        while (temp!=null)
+        while (temp!=tail)
         {
             System.out.print(temp.data+" ");
             temp=temp.next;
         }
-        System.out.println();
+        System.out.println(temp.data);
     }
 
     public void display_from_end()
     {
         Node temp=tail;
-        while (temp!=null)
+        while (temp!=head)
         {
             System.out.print(temp.data+" ");
             temp=temp.prev;
         }
-        System.out.println();
+        System.out.println(temp.data);
     }
 
     public void addLast(int data)
@@ -56,8 +56,8 @@ public class Circular_Doubly_Linked_List
         else
         {
             tail=nn;
-            nn.next=head;
-            head.prev=nn;
+            tail.next=head;
+            head.prev=tail;
             size++;
         }
     }
@@ -71,8 +71,8 @@ public class Circular_Doubly_Linked_List
 
         if(size>0)
         {
-            head.prev=nn;
             nn.next=head;
+            head.prev=nn;
         }
 
         if (size==0)
@@ -84,7 +84,7 @@ public class Circular_Doubly_Linked_List
         else
         {
             head=nn;
-            nn.prev=tail;
+            head.prev=tail;
             tail.next=head;
             size++;
         }
