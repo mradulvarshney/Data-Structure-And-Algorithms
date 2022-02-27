@@ -4,12 +4,14 @@ public class Linear_Queue_Using_Array
 {
     private int[] queue;
     private int front;
+    private int rear;
     private int size;
 
     Linear_Queue_Using_Array(int size)
     {
         queue = new int[size];
         front=0;
+        rear=0;
         size=0;
     }
 
@@ -33,7 +35,7 @@ public class Linear_Queue_Using_Array
         if (isFull())
             throw new Exception("Queue is Full");
 
-        queue[front+size]=data;
+        queue[rear++]=data;
         size++;
     }
 
@@ -45,7 +47,12 @@ public class Linear_Queue_Using_Array
         int temp = queue[front];
         queue[front]=0;
         front = front+1;
-        size--;
+        if(front==queue.length)
+        {
+            front=0;
+            rear=0;
+            size=0;
+        }
         return temp;
     }
 
@@ -65,7 +72,7 @@ public class Linear_Queue_Using_Array
 
     public void display()
     {
-        for (int i = 0; i < queue.length; i++)
+        for (int i =front; i < rear; i++)
             System.out.print(queue[i] + " ");
         System.out.println();
     }
