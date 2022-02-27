@@ -113,7 +113,7 @@ public class Doubly_Linked_List
         }
     }
 
-    public Node getNodeAt(int index) throws Exception
+    private Node getNodeAt(int index) throws Exception
     {
         if (size==0)
             throw new Exception("LL is empty");
