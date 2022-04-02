@@ -152,4 +152,74 @@ public class BinaryTree
             return true;
         return false;
     }
+
+    /*
+        NLR = preOrder
+        LRN = postOrder
+        LNR = inOrder
+
+        NRL = reverse postOrder
+        RLN = reverse preOrder
+        RNL = reverse inOrder
+    */
+
+    public void preOrder() // NLR
+    {
+        preOrder(root);
+    }
+    private void preOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        // N
+        System.out.println(node.data);
+
+        //L
+        preOrder(node.left);
+
+        //R
+        preOrder(node.right);
+    }
+
+    public void postOrder() // LRN
+    {
+        postOrder(root);
+    }
+    private void postOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        //L
+        postOrder(node.left);
+
+        //R
+        postOrder(node.right);
+
+        // N
+        System.out.println(node.data);
+    }
+
+    public void inOrder() // LNR
+    {
+        inOrder(root);
+    }
+    private void inOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        //L
+        inOrder(node.left);
+
+        // N
+        System.out.println(node.data);
+
+        //R
+        inOrder(node.right);
+    }
 }
