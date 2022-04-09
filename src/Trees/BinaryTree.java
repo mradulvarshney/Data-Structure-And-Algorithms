@@ -238,4 +238,20 @@ public class BinaryTree
             max = ls + rs + node.data;
         return ls+ rs+ node.data;
     }
+    public int sumOfAllLeafNodes()
+    {
+        return sumOfAllLeafNodes(root);
+    }
+    private int sumOfAllLeafNodes(Node node)
+    {
+        if(node==null)
+        {
+            return 0;
+        }
+
+        int ls = sumOfAllLeafNodes(node.left);
+        int rs = sumOfAllLeafNodes(node.right);
+
+        return ls+rs+node.data;
+    }
 }
