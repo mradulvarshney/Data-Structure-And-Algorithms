@@ -50,7 +50,7 @@ public class BinaryTree
         boolean hrc = sc.nextBoolean(); // has right child
         if (hrc)
         {
-            nn.right = insert(nn, true);
+            nn.right = insert(nn, false);
         }
 
         return nn;
@@ -221,5 +221,21 @@ public class BinaryTree
 
         //R
         inOrder(node.right);
+    }
+    int max = Integer.MIN_VALUE;
+    public int maxSubTreeSum()
+    {
+        maxSubTreeSum(root);
+        return max;
+    }
+    private int maxSubTreeSum(Node node)
+    {
+        if (node == null)
+            return 0;
+        int ls = maxSubTreeSum(node.left);
+        int rs = maxSubTreeSum(node.right);
+        if (max<ls+rs+ node.data)
+            max = ls + rs + node.data;
+        return ls+ rs+ node.data;
     }
 }
