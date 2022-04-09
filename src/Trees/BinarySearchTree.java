@@ -11,9 +11,9 @@ public class BinarySearchTree
 
     private Node root;
 
-    public BinarySearchTree(){}
+    BinarySearchTree(){}
 
-    public BinarySearchTree(int[] arr)
+    BinarySearchTree(int[] arr)
     {
         root = construct(arr, 0, arr.length-1 );
     }

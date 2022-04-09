@@ -14,7 +14,7 @@ public class BinaryTree
     }
     private Node root;
 
-    public BinaryTree()
+    BinaryTree()
     {
         root = insert(null, false);
     }
