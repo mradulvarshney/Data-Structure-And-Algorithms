@@ -138,14 +138,10 @@ public class BinarySearchTree
         {
             return 0;
         }
-        int tm = node.data; // total max
-        int lm = max(node.left); // left max
-        if (lm>tm)
-            tm=lm;
-        int rm = max(node.right); // right max
-        if (rm>tm)
-            tm=rm;
-        return tm;
+        int max = max(node.right);
+        if (max<node.data)
+            max=node.data;
+        return max;
     }
 
     public boolean find(int item)
@@ -160,10 +156,10 @@ public class BinarySearchTree
         if (node.data==item)
             return true;
 
-        boolean lf = find(node.left, item);
-        boolean rf = find(node.right, item);
+        if (item>node.data)
+            return find(node.right, item);
 
-        return lf||rf;
+        return find(node.left, item);
     }
 
     public int sumOfAllLeafNodes()
@@ -181,5 +177,125 @@ public class BinarySearchTree
         int rs = sumOfAllLeafNodes(node.right);
 
         return ls+rs+node.data;
+    }
+    int max = Integer.MIN_VALUE;
+    public int maxSubTreeSum()
+    {
+        return maxSubTreeSum(root);
+    }
+    private int maxSubTreeSum(Node node)
+    {
+        if (node == null)
+            return 0;
+        int ls = maxSubTreeSum(node.left);
+        int rs = maxSubTreeSum(node.right);
+        if (max<ls+rs+node.data)
+            max=ls+rs+node.data;
+
+        return ls+rs+node.data;
+    }
+
+    public void remove(int item)
+    {
+        remove(root, null, false, item);
+    }
+    private void remove(Node node, Node parent, boolean ilc, int item)
+    {
+        if(item>node.data)
+        {
+            remove(node.right, node, false, item);
+        }
+        else if (item<node.data)
+        {
+            remove(node.left, node, true, item);
+        }
+        else
+        {
+            if (node.left==null && node.right==null)
+            {
+                if (ilc)
+                {
+                    parent.left=null;
+                }
+                else
+                {
+                    parent.right=null;
+                }
+            }
+            else if (node.left==null && node.right!=null)
+            {
+
+            }
+        }
+    }
+
+    /*
+        NLR = preOrder
+        LRN = postOrder
+        LNR = inOrder
+
+        NRL = reverse postOrder
+        RLN = reverse preOrder
+        RNL = reverse inOrder
+    */
+
+    public void preOrder() // NLR
+    {
+        preOrder(root);
+    }
+    private void preOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        // N
+        System.out.println(node.data);
+
+        //L
+        preOrder(node.left);
+
+        //R
+        preOrder(node.right);
+    }
+
+    public void postOrder() // LRN
+    {
+        postOrder(root);
+    }
+    private void postOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        //L
+        postOrder(node.left);
+
+        //R
+        postOrder(node.right);
+
+        // N
+        System.out.println(node.data);
+    }
+
+    public void inOrder() // LNR
+    {
+        inOrder(root);
+    }
+    private void inOrder(Node node)
+    {
+        if (node == null)
+        {
+            return;
+        }
+        //L
+        inOrder(node.left);
+
+        // N
+        System.out.print(node.data+ " ");
+
+        //R
+        inOrder(node.right);
     }
 }
