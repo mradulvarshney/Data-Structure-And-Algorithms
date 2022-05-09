@@ -24,7 +24,7 @@ public class Linear_Search_UsingRecursion
         System.out.print("Enter the element to search: ");
         int num = sc.nextInt();
         int res = search(arr, 0, num);
-        if (res>0)
+        if (res>=0)
             System.out.println("Element found at index " + res);
         else
             System.out.println("Element not found.");
