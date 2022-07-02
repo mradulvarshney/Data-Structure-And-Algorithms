@@ -39,23 +39,7 @@ public class Linear_Queue_Using_Array
         size++;
     }
 
-    public int deQueue() throws Exception
-    {
-        if (isEmpty())
-            throw new Exception("Queue is Empty");
-
-        int temp = queue[front];
-        queue[front]=0;
-        front = front+1;
-        if(front==queue.length)
-        {
-            front=0;
-            rear=0;
-            size=0;
-        }
-        return temp;
-    }
-
+    
     public int getFront() throws Exception
     {
         if (isEmpty())
